@@ -1,0 +1,6 @@
+# BEGIN WordPress
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([-a-zA-Z0-9/]+)$ index.php?pages=$1
