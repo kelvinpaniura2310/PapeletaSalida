@@ -13,7 +13,7 @@
     include('config/conexion.php');
 
     // Verifica si se ha enviado una búsqueda
-    
+
     $search = "";
     if (isset($_POST['table_search']) && !empty($_POST['table_search'])) {
         $search = mysqli_real_escape_string($conn, $_POST['table_search']);
@@ -135,7 +135,13 @@
                                     echo "<td>{$fila['contraseña']}</td>";
                                     echo "<td>{$fila['fecha_registro']}</td>";
                                     echo "<td>{$fila['tipo_usuario']}</td>";
-                                    echo "<td>{$fila['estado']}</td>";
+
+                                    // Estado con botón
+                                    $estado = $fila['estado'] ? 'Activo' : 'Inactivo';
+                                    $color = $fila['estado'] ? 'btn-success' : 'btn-danger';
+                                    echo "<td>";
+                                    echo "<button type='button' class='btn {$color} toggle-estado' data-dni='{$fila['dni']}'>{$estado}</button>";
+                                    echo "</td>";
 
                                     // Datos del Estudiante
                                     echo "<td>" . (!empty($fila['semestre_academico']) ? $fila['semestre_academico'] : 'N/A') . "</td>";
@@ -165,6 +171,7 @@
                                     echo "</tr>";
                                 }
                                 ?>
+
                             </tbody>
                         </table>
                     </div>
@@ -177,8 +184,38 @@
     } else {
         echo "<div class='alert alert-warning'>No se encontraron datos.</div>";
     }
-
     // Cerrar la conexión a la base de datos
     mysqli_close($conn);
     ?>
+
+    <script>
+        $(document).ready(function() {
+            $('.toggle-estado').click(function() {
+                const button = $(this);
+                const dni = button.data('dni');
+                const currentStatus = button.text().trim();
+                const newStatus = currentStatus === 'Activo' ? 'Inactivo' : 'Activo';
+                const newColor = currentStatus === 'Activo' ? 'btn-danger' : 'btn-success';
+
+                // Enviar la solicitud AJAX para actualizar el estado en la base de datos
+                $.ajax({
+                    url: 'controller/actualizar_estado.php', // Ruta al archivo PHP que manejará la actualización
+                    type: 'POST',
+                    data: {
+                        dni: dni,
+                        estado: newStatus
+                    },
+                    success: function(response) {
+                        // Si el servidor confirma el cambio, actualizamos el botón
+                        button.text(newStatus);
+                        button.removeClass('btn-success btn-danger').addClass(newColor);
+                        console.log(response); // Para depuración, muestra la respuesta del servidor
+                    },
+                    error: function() {
+                        alert("Hubo un problema al intentar actualizar el estado.");
+                    }
+                });
+            });
+        });
+    </script>
 </div>

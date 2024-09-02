@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="views/resources/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="views/resources/plugins/summernote/summernote-bs4.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed"  >
