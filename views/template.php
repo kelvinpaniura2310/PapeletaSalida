@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -28,16 +28,20 @@
     <link rel="stylesheet" href="views/resources/plugins/summernote/summernote-bs4.min.css">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed"  >
     <div class="wrapper">
-        <!-- header -->
-        <?php include "modules/header.php" ?>
 
-        <!-- nav-->
-        <?php include "modules/nav.php" ?>
+        <?php
+        
+        session_start();
 
-        <div class="content-wrapper">
-            <?php
+        if (isset($_SESSION['login']) && $_SESSION['estado'] == true ) {
+
+
+            include "modules/header.php";
+            include "modules/nav.php";
+            echo '<div class="content-wrapper">';
+
             if (isset($_GET["pages"])) {
                 if (
                     $_GET["pages"] == "users" ||
@@ -50,12 +54,17 @@
                     include "pages/" . $_GET["pages"] . ".php";
                 }
             }
+            echo '</div>';
+            
+        #<!-- Footer -->
+        include "modules/footer.php";
+        } else {
+            include "views/pages/login.php";
+        }
+        
+        ?>
 
-            ?>
 
-        </div>
-        <!-- Footer -->
-        <?php include "modules/footer.php" ?>
     </div>
     <!-- ./wrapper -->
 

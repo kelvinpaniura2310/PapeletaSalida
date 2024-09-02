@@ -31,6 +31,7 @@
         Persona.contraseña,
         Persona.fecha_registro,
         Persona.tipo_usuario,
+        Persona.estado,
         Estudiante.semestre_academico,
         Programa_Estudio.nombre AS nombre_programa,
         Personal_Administrativo.area_id,
@@ -112,6 +113,7 @@
                                     <th>Contraseña</th>
                                     <th>Fecha de Registro</th>
                                     <th>Tipo de Usuario</th>
+                                    <th>Estado</th>
                                     <th>Semestre Académico</th>
                                     <th>Programa de Estudio</th>
                                     <th>Área</th>
@@ -133,6 +135,7 @@
                                     echo "<td>{$fila['contraseña']}</td>";
                                     echo "<td>{$fila['fecha_registro']}</td>";
                                     echo "<td>{$fila['tipo_usuario']}</td>";
+                                    echo "<td>{$fila['estado']}</td>";
 
                                     // Datos del Estudiante
                                     echo "<td>" . (!empty($fila['semestre_academico']) ? $fila['semestre_academico'] : 'N/A') . "</td>";

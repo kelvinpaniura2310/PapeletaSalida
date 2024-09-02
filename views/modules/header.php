@@ -36,7 +36,7 @@
           <i class="fas fa-user mr-2"></i> Ver Perfil
         </a>
         <div class="dropdown-divider"></div>
-        <a href="views/pages/login.php" class="dropdown-item">
+        <a href="controller/logout.php" class="dropdown-item">
           <i class="fas-solid fa-door-open mr-2"></i> Cerrar Sesion
         </a>
     </li>
