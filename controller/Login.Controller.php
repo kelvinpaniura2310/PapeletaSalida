@@ -15,14 +15,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($result->num_rows > 0) {
             // Obtener los datos del usuario
             $row = $result->fetch_assoc();
-            
+
+            // Obtener el texto cifrado de la base de datos
+            $encrypted_password = base64_decode($row['contraseña']);
+
+            // Separar el IV del texto cifrado
+            $encryption_key = '76194862'; // Cambia esto por una clave segura y mantenla protegida
+            $cipher = "AES-256-CBC";
+            $iv_length = openssl_cipher_iv_length($cipher);
+            $iv = substr($encrypted_password, 0, $iv_length);
+            $ciphertext = substr($encrypted_password, $iv_length);
+
+            // Descifrar la contraseña almacenada
+            $decrypted_password = openssl_decrypt($ciphertext, $cipher, $encryption_key, 0, $iv);
+
+
             // Verificar la contraseña (considerando que uses password_hash)
-            if ($pass == $row['contraseña']) {
+            if ($pass == $decrypted_password) {
                 // Establecer sesión
                 $_SESSION['login'] = $row['dni'];
                 $_SESSION['estado'] = $row['estado'];
-                
-                
+                $_SESSION['nombre'] = $row['nombre'];
+                $_SESSION['apellidos'] = $row['apellidos'];
+
+
                 // Redirigir a la página principal del usuario
                 header("Location: ../index.php");  // Asegúrate de que esta ruta es correcta
                 exit();
@@ -38,4 +54,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 
 $conn->close();
-?>

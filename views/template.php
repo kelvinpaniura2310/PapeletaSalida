@@ -37,7 +37,7 @@
         
         session_start();
 
-        if (isset($_SESSION['login']) && $_SESSION['estado'] == true ) {
+        if ((isset($_SESSION['login']) && $_SESSION['estado'] == true)) {
 
 
             include "modules/header.php";
@@ -51,7 +51,8 @@
                     $_GET["pages"] == "registropapeletas" ||
                     $_GET["pages"] == "newpapeleta" ||
                     $_GET["pages"] == "mispapeletas" ||
-                    $_GET["pages"] == "areas"
+                    $_GET["pages"] == "areas" || 
+                    $_GET["pages"] == "home"
                 ) {
                     include "pages/" . $_GET["pages"] . ".php";
                 }
