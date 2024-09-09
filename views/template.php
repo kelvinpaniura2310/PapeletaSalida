@@ -30,7 +30,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed"  >
+<body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
         <?php
@@ -39,12 +39,13 @@
 
         if ((isset($_SESSION['login']) && $_SESSION['estado'] == true)) {
 
-
             include "modules/header.php";
             include "modules/nav.php";
+            
             echo '<div class="content-wrapper">';
 
             if (isset($_GET["pages"])) {
+                
                 if (
                     $_GET["pages"] == "users" ||
                     $_GET["pages"] == "role" ||
@@ -52,7 +53,9 @@
                     $_GET["pages"] == "newpapeleta" ||
                     $_GET["pages"] == "mispapeletas" ||
                     $_GET["pages"] == "areas" || 
-                    $_GET["pages"] == "home"
+                    $_GET["pages"] == "home" ||
+                    $_GET["pages"] == "perfil" ||
+                    $_GET["pages"] == "template"
                 ) {
                     include "pages/" . $_GET["pages"] . ".php";
                 }

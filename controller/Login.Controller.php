@@ -37,6 +37,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $_SESSION['estado'] = $row['estado'];
                 $_SESSION['nombre'] = $row['nombre'];
                 $_SESSION['apellidos'] = $row['apellidos'];
+                $_SESSION['dni'] = $row['dni'];
+                $_SESSION['fecha_nacimiento'] = $row['fecha_nacimiento'];
+                $_SESSION['direccion'] = $row['direccion'];
+                $_SESSION['telefono'] = $row['telefono'];
+                $_SESSION['correo'] = $row['correo'];
+                $_SESSION['fecha_registro'] = $row['fecha_registro'];
+                $_SESSION['tipo_usuario'] = $row['tipo_usuario'];
+
 
 
                 // Redirigir a la página principal del usuario

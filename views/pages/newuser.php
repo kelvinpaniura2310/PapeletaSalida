@@ -216,9 +216,6 @@ $result_areas = $conn->query($sql_areas);
             <a href="../../index.php" class="text-center">Ya tienes una Cuenta?</a>
           </div>
         </form>
-
-
-
       </div>
       <!-- /.form-box -->
     </div><!-- /.card -->

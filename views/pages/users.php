@@ -132,7 +132,20 @@
                                     echo "<td>{$fila['direccion']}</td>";
                                     echo "<td>{$fila['telefono']}</td>";
                                     echo "<td>{$fila['correo']}</td>";
-                                    echo "<td>{$fila['contraseña']}</td>";
+
+                                    $encrypted_password = base64_decode($fila['contraseña']);
+
+                                    // Separar el IV del texto cifrado
+                                    $encryption_key = '76194862'; // Cambia esto por una clave segura y mantenla protegida
+                                    $cipher = "AES-256-CBC";
+                                    $iv_length = openssl_cipher_iv_length($cipher);
+                                    $iv = substr($encrypted_password, 0, $iv_length);
+                                    $ciphertext = substr($encrypted_password, $iv_length);
+                        
+                                    // Descifrar la contraseña almacenada
+                                    $decrypted_password = openssl_decrypt($ciphertext, $cipher, $encryption_key, 0, $iv);
+
+                                    echo "<td>{$decrypted_password}</td>";
                                     echo "<td>{$fila['fecha_registro']}</td>";
                                     echo "<td>{$fila['tipo_usuario']}</td>";
 
