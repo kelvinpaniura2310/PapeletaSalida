@@ -2,7 +2,7 @@
     <!-- SELECT2 EXAMPLE -->
     <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">Datos Personales</h3>
+            <h3 class="card-title"><b>Datos Personales</b></h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -10,33 +10,33 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>DNI:
-                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="id" value="<?php echo $_SESSION['dni'];?>" readonly>
+                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="id" value="<?php echo $_SESSION['dni']; ?>" readonly>
                         </label>
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group">
                         <label>Nombres:
-                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['nombre'];?>" readonly>
+                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['nombre']; ?>" readonly>
                         </label>
                     </div>
                     <div class="form-group">
                         <label>Apellidos:
-                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['apellidos'];?>" readonly>
+                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['apellidos']; ?>" readonly>
                         </label>
                     </div>
                     <div class="form-group">
                         <label>Fecha de Nacimiento:
-                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['fecha_nacimiento'];?>" readonly>
+                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['fecha_nacimiento']; ?>" readonly>
                         </label>
                     </div>
                     <div class="form-group">
                         <label>Dirección:
-                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['direccion'];?>" readonly>
+                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['direccion']; ?>" readonly>
                         </label>
                     </div>
                     <div class="form-group">
                         <label>Teléfono:
-                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['telefono'];?>" readonly>
+                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['telefono']; ?>" readonly>
                         </label>
                     </div>
                     <!-- /.form-group -->
@@ -45,19 +45,19 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Correo Electrónico:
-                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['correo'];?>" readonly>
+                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['correo']; ?>" readonly>
                         </label>
 
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group">
                         <label>Fecha De Registro:
-                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['fecha_registro'];?>" readonly>
+                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['fecha_registro']; ?>" readonly>
                         </label>
                     </div>
                     <div class="form-group">
                         <label>Rol que Ejerce en el IESTPA:
-                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['tipo_usuario'];?>" readonly>
+                            <input type="text" class="form-control" style="border: none; outline: none;  background: white;" name="dni" value="<?php echo $_SESSION['tipo_usuario']; ?>" readonly>
                         </label>
                     </div>
                     <div class="form-group">
@@ -70,6 +70,9 @@
                         </label>
                     </div>
 
+                    <a href="updateuser" class="btn btn-app bg-warning">
+                        <i class="fas fa-edit"></i> Editar
+                    </a>
                 </div>
                 <!-- /.col -->
             </div>

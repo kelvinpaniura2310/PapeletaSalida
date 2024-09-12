@@ -13,7 +13,7 @@ $result_areas = $conn->query($sql_areas);
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Registration Page (v2)</title>
+  <title>Registro de Nuevo Usuario</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -39,14 +39,15 @@ $result_areas = $conn->query($sql_areas);
 
 </head>
 
-<body class="hold-transition register-page">
+<body class="hold-transition register-page" style="
+   background: black;">
   <div class="register-box">
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
-        <a href="../../index2.html" class="h1"><b>PapeletaS</b>IESTPA</a>
+        <a href="" class="h1"><b>PapeletaS</b>IESTPA</a>
       </div>
       <div class="card-body">
-        <p class="login-box-msg">Registrate como nuevo ususario</p>
+        <p class="login-box-msg"><b>Nuevo Usuario</b></p>
 
         <form action="../../../papeleta/controller/registrousuario.controller.php" method="post">
 
@@ -137,10 +138,10 @@ $result_areas = $conn->query($sql_areas);
           </script>
 
           <div class="input-group mb-3">
-            <input type="text" class="form-control"  name="id" placeholder="DNI o Numero de Extranjeria">
+            <input type="text" class="form-control"  name="id" placeholder="DNI o Numero de Extranjeria" maxlength="8" required>
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-user"></span>
+                <span class="fas fa-id-card"></span>
               </div>
             </div>
           </div>
@@ -156,7 +157,7 @@ $result_areas = $conn->query($sql_areas);
             <input type="text" class="form-control"  name="firtname" placeholder="Apellidos">
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-user"></span>
+                <span class="fas fa-users"></span>
               </div>
             </div>
           </div>
@@ -174,7 +175,7 @@ $result_areas = $conn->query($sql_areas);
             <input type="text" class="form-control"  name="direccion" placeholder="Direccion">
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-user"></span>
+                <span class="fas fa-map-marker-alt"></span>
               </div>
             </div>
           </div>
@@ -182,7 +183,7 @@ $result_areas = $conn->query($sql_areas);
           <!-- phone mask -->
           <div class="form-group">
             <div class="input-group">
-              <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask  name="telefono" placeholder="Teléfono">
+              <input type="text" class="form-control"  data-mask  name="telefono" maxlength="9" placeholder="Teléfono">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-phone"></i></span>
               </div>
@@ -213,7 +214,10 @@ $result_areas = $conn->query($sql_areas);
               <button type="submit" class="btn btn-primary btn-block">Registrar</button>
             </div>
             <!-- /.col -->
-            <a href="../../index.php" class="text-center">Ya tienes una Cuenta?</a>
+            <a href="../../index.php" style="color: blue" class="btn";
+            onmouseover="this.style.backgroundColor='black'; this.style.color='white';" 
+            onmouseout="this.style.backgroundColor='transparent'; this.style.color='blue';">
+            Ya tienes una Cuenta?</a>
           </div>
         </form>
       </div>

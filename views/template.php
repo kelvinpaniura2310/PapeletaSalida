@@ -55,7 +55,8 @@
                     $_GET["pages"] == "areas" || 
                     $_GET["pages"] == "home" ||
                     $_GET["pages"] == "perfil" ||
-                    $_GET["pages"] == "template"
+                    $_GET["pages"] == "template" ||
+                    $_GET["pages"] == "updateuser" 
                 ) {
                     include "pages/" . $_GET["pages"] . ".php";
                 }

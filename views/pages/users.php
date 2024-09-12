@@ -1,13 +1,5 @@
 <div class="content" style="min-height: 717px;">
-    <section class="content-header">
-        <div class="content-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Administración de Usuarios</h1>
-                </div>
-            </div>
-        </div>
-    </section>
+   <br>
     <?php
     // Incluye la conexión a la base de datos
     include('config/conexion.php');
@@ -80,8 +72,8 @@
 
         <div class="row">
             <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
+                <div class="card card-danger">
+                    <div class="card-header ">
                         <h3 class="card-title">Lista de Usuarios</h3>
 
                         <div class="card-tools">
@@ -100,7 +92,7 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body table-responsive p-0">
-                        <table class="table table-hover text-nowrap">
+                        <table class="table table-hover text-nowrap table-responsive ">
                             <thead>
                                 <tr>
                                     <th>DNI</th>
@@ -171,12 +163,6 @@
                                         echo "<form action='modificar.php' method='post' style='display:inline;'>";
                                         echo "<input type='hidden' name='dni' value='{$fila['dni']}'>";
                                         echo "<input type='submit' class='btn btn-warning' value='Modificar'>";
-                                        echo "</form>";
-
-                                        // Formulario para Eliminar
-                                        echo "<form action='../controladores/Eliminaruser.php' method='post' style='display:inline;'>";
-                                        echo "<input type='hidden' name='dni' value='{$fila['dni']}'>";
-                                        echo "<input type='submit' class='btn btn-danger' value='Eliminar'>";
                                         echo "</form>";
                                         ?>
                                     </td>

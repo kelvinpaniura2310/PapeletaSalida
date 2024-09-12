@@ -4,7 +4,7 @@
 </div>
 
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand navbar-dark">
+<nav class="main-header navbar navbar-expand navbar-dark" style="background-color: black;">
   <!-- Left navbar links -->
   <ul class="navbar-nav">
     <li class="nav-item">
@@ -35,8 +35,8 @@
     <li class="nav-item dropdown">
       <a class="nav-link" data-toggle="dropdown" href="#">
         <i class="">
-        <img src="views/resources/img/logo.png" class="img-circle elevation-2" style="width: 30px; height: 30px;" alt="User Image">  
-        <?php echo $nombre . " " . $apellidos ?>
+          <img src="views/resources/img/logo.png" class="img-circle elevation-2" style="width: 30px; height: 30px;" alt="User Image">
+          <?php echo $nombre . " " . $apellidos ?>
         </i>
       </a>
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -45,7 +45,7 @@
         </a>
         <div class="dropdown-divider"></div>
         <a href="controller/logout.php" class="dropdown-item">
-          <i class="fas-solid fa-door-open mr-2"></i> Cerrar Sesion
+          <i class="fas fa-sign-out-alt mr-2"></i> Cerrar Sesion
         </a>
     </li>
 
